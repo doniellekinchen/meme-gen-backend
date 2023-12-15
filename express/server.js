@@ -27,7 +27,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-app.use('/', memeRouter);
+app.use('/meme', memeRouter);
 app.use('/meme', memeRouter);
 
 // catch 404 and forward to error handler
