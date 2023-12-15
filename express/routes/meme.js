@@ -1,17 +1,17 @@
 const express = require('express');
 const router = express.Router();
 
-const peopleCtrl = require('../controllers/people')
+const memeCtrl = require('../controllers/meme')
 
 router.get("/", memeCtrl.index)
 
 router.post("/", memeCtrl.create)
 
-router.get("/", memeCtrl.show)
+router.get("/:id", memeCtrl.show)
 
-router.delete("/", memeCtrl.delete)
+router.delete("/:id", memeCtrl.delete)
 
-router.put("/", memeCtrl.update)
+router.put("/:id", memeCtrl.update)
 
 
 

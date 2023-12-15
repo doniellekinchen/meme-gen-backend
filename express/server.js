@@ -9,8 +9,9 @@ require('dotenv').config();
 require('./config/db.connection');
 const { PORT } = process.env;
 
+// const express = require('express');
+const morgan = require('morgan')
 
-const indexRouter = require('./routes/index');
 const memeRouter = require('./routes/meme');
 
 const app = express();
@@ -25,7 +26,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
+
 app.use('/meme', memeRouter);
 
 // catch 404 and forward to error handler

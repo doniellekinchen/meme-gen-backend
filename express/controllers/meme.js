@@ -4,6 +4,7 @@ module.exports ={
     index,
     create,
     show,
+    delete: destroy,
     update
 }
 
