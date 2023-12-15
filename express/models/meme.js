@@ -2,9 +2,9 @@ const mongoose = require("mongoose")
 const Schema = mongoose.Schema
 
 const MemeSchema = new Schema ({
-    name: String,
-    image: String,
-    text: String
+    name: { type: String, required: true },
+    image: { type: String, required: true },
+    text: { type: String, required: true },
 })
 
 

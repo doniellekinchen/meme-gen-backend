@@ -7,10 +7,10 @@ const logger = require('morgan');
 
 require('dotenv').config();
 require('./config/db.connection');
-const { PORT } = process.env;
+const { PORT } = process.env; 
 
 // const express = require('express');
-const morgan = require('morgan')
+// const morgan = require('morgan')
 
 const memeRouter = require('./routes/meme');
 
@@ -27,6 +27,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
+app.use('/', memeRouter);
 app.use('/meme', memeRouter);
 
 // catch 404 and forward to error handler
@@ -45,5 +46,9 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+
+app.listen(PORT, () => {
+  console.log(`Server is running on ${PORT}`);
+});
 
 module.exports = app;
